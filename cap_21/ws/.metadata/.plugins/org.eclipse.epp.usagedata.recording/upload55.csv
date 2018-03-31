@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.copy",1271201814750
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201817843
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201817843
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201818000
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201830531
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201835296
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271201857203
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202278375
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202295171
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202394250
+error,log,,,"Part already exists in page layout: org.eclipse.debug.ui.PHPStackView.",1271202398937
+opened,view,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui.DebugView",1271202399875
+opened,view,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui.VariableView",1271202400265
+activated,perspective,org.eclipse.php.debug.ui,2.1.1.v20090714-1338,"org.eclipse.php.debug.ui.PHPDebugPerspective",1271202400515
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.perspectives.showPerspective",1271202400593
+executed,command,,,"org.eclipse.php.debug.ui.PHPDebugPerspective",1271202400593
+activated,view,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui.VariableView",1271202416046
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202422671
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202422687
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202422859
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202424406
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202431500
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202431515
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202431718
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271202600578

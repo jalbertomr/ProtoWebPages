@@ -1,0 +1,13 @@
+html {
+  font: small/1.4 "Lucida Grande", Tahoma, sans-serif;
+}
+body {
+  font-size: 92%;
+}
+#nav {
+	margin: 0;
+	padding: 0;
+	background: #6F6146;
+	list-style-type: none;
+	width: 180px;
+}

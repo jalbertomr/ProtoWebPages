@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>Gesti&oacute;n de permisos de ficheros</title>
+    <script language="javascript" type="text/javascript">
+/* La siguiente función se ocupa de cargar el script "leerPermisos.php" en el marco flotante.
+Además, le pasa, como variable GET (en la URL) el nombre del fichero cuyos permisos se quieren
+leer. Dado que este script se carga en un marco, la llamada no aparece en la barra de
+direcciones del navegador, donde sigue cargada la página principal (esta misma).
+Esta función se llama cada vez que cambia el valor en el campo de archivo.*/
+	  function actualizarPermisoVigente (){  //por BuscarArchivo o Browse
+	     debugger;
+	     datosPermisos = "leerPermisos.php?fichero="+document.getElementById("ficheroElegido").value;
+	     
+		  document.getElementById("marcoPermisos").src="leerPermisos.php?fichero="+document.getElementById("ficheroElegido").value;
+      }
+/* La siguiente función se ocupa de actualizar el nodo de texto con la secuencia de permisos
+que desea establecer el usuario. Esta función es invocada cada vez que se activa o desactiva
+alguna de las checkbox relativas a los permisos que hay en el formulario principal, y recalcula
+la secuencia de permisos, mostrándola en el correspondiente nodo de texto.*/
+      function actualizarNuevoPermiso (){
+// Se recalcula el valor de los permisos para el propietario.
+        permisosPropietario=0;
+        for (contador=1;contador<4;contador++){
+          if (document.forms["fPermisos"].elements[contador].checked) permisosPropietario+=parseInt(document.forms["fPermisos"].elements[contador].value);
+        }
+// Se recalcula el valor de los permisos para el grupo.
+        permisosGrupo=0;
+        for (contador=4;contador<7;contador++){
+          if (document.forms["fPermisos"].elements[contador].checked) permisosGrupo+=parseInt(document.forms["fPermisos"].elements[contador].value);
+        }
+// Se recalcula el valor de los permisos para el resto de usuarios.
+        permisosOtros=0;
+        for (contador=7;contador<10;contador++){
+          if (document.forms["fPermisos"].elements[contador].checked) permisosOtros+=parseInt(document.forms["fPermisos"].elements[contador].value);
+        }
+        permisosParaOtorgar="0"+permisosPropietario+permisosGrupo+permisosOtros;
+// Se re-escribe el nodo de texto de los permisos.
+		document.getElementById ("nuevoPermiso").firstChild.nodeValue = permisosParaOtorgar;
+      }
+/* La siguiente función es invocada cuando se pulsa el botón de "RESET" del formulario.
+Se encarga de limpiar los nodos de texto.*/
+      function borrarPermisosActuales (){
+        document.getElementById ("permisoVigente").firstChild.nodeValue = "0000";
+        actualizarNuevoPermiso();
+        document.getElementById ("nuevoPermiso").firstChild.nodeValue = "0000";
+      }
+/* La siguiente función es invocada cuando se pulsa el botón destinado a enviar el
+formulario y cambiar los permisos. Lo que hace es cargar el nombre del fichero y el
+valor de permisos elegidos en los campos ocultos del formulario secundario, que es
+el que se enviará al script encargado de modificar los permisos. El formulario
+principal no es enviado a ninguna parte. Solo es una interfaz para el usuario.*/
+      function enviarFormulario (){  //por boton Cambiar Permisos  
+        document.getElementById("ocultoNombre").value = document.getElementById("ficheroElegido").value;
+        document.getElementById("ocultoPermisos").value = document.getElementById ("nuevoPermiso").firstChild.nodeValue;
+        document.fEnviar.submit();
+      }
+    </script>
+  </head>
+
+  <body>
+    <h3>GESTI&Oacute;N DE PERMISOS DE FICHEROS<br>
+    Empleamos las funciones fileperms() y chmod()</h3>
+<!-- Aquí empieza el que podemos llamar "Formulario Principal" Contiene la interfaz del usuario.
+Sus datos no serán nunca enviados a ninguna parte (observe que no tiene valor alguno en el
+atributo action). Los datos que nos interesa enviar se cargarán luego en campos ocultos
+de otro formulario, que es el que será enviado.-->
+    <form action="" method="post" name="fPermisos" id="fPermisos" onReset="javascript:borrarPermisosActuales();">
+      <table width="600" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="right">Seleccione el fichero:&nbsp;</td>
+          <td><input name="ficheroElegido" type="file" id="ficheroElegido" size="50" onChange="javascript:actualizarPermisoVigente ();"></td>
+        </tr>
+      </table>
+      <table width="600" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center" valign="middle">
+          <td height="44" colspan="4"><h4>Establezca los permisos que desea otorgar al fichero.</h4></td>
+        </tr>
+        <tr>
+          <td width="173">&nbsp;</td>
+          <td width="130">Lectura</td>
+          <td width="120">Escritura</td>
+          <td width="167">Ejecuci&oacute;n</td>
+        </tr>
+        <tr>
+          <td>Propietario</td>
+          <td><input name="lProp" type="checkbox" id="lProp" value="4" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="eProp" type="checkbox" id="eProp" value="2" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="xProp" type="checkbox" id="xProp" value="1" onClick="javascript:actualizarNuevoPermiso ();"></td>
+        </tr>
+        <tr>
+          <td>Grupo</td>
+          <td><input name="lGrupo" type="checkbox" id="lGrupo" value="4" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="eGrupo" type="checkbox" id="eGrupo" value="2" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="xGrupo" type="checkbox" id="xGrupo" value="1" onClick="javascript:actualizarNuevoPermiso ();"></td>
+        </tr>
+        <tr>
+          <td>Otros</td>
+          <td><input name="lOtros" type="checkbox" id="lOtros" value="4" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="eOtros" type="checkbox" id="eOtros" value="2" onClick="javascript:actualizarNuevoPermiso ();"></td>
+          <td><input name="xOtros" type="checkbox" id="xOtros" value="1" onClick="javascript:actualizarNuevoPermiso ();"></td>
+        </tr>
+      </table>
+      <table width="600" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center">
+          <td width="297" height="55"><input name="aceptar" type="button" id="aceptar" value="Cambiar permisos" onClick="javascript:enviarFormulario();"></td>
+          <td width="297"><input name="borrar" type="reset" id="borrar" value="Limpiar formulario"></td>
+        </tr>
+      </table>
+    </form>
+    <table width="600" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="297">&nbsp;</td>
+        <td width="297">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="right">Permisos actuales del fichero:&nbsp;</td>
+<!-- Se crea el nodo de texto con los permisos actuales del fichero. -->
+        <td><div id="permisoVigente">0000</div></td>
+      </tr>
+      <tr>
+        <td align="right">Nuevos permisos:&nbsp;</td>
+<!-- Se crea el nodo de texto donde se reflejan los nuevos permisos del fichero. -->
+        <td><div id="nuevoPermiso">0000</div></td>
+      </tr>
+    </table>
+<!-- El siguiente formulario es el que contien dos campos oculto que se
+actualizarán con el nombre del fichero y los permisos que deseamos darle.
+Estos dos campos serán enviados al script que se encarga de modificar los
+permisos del fichero elegido.-->
+    <form action="modificarPermisos.php" method="post" name="fEnviar" id="fEnviar">
+      <input name="ocultoNombre" type="hidden" id="ocultoNombre">
+      <input name="ocultoPermisos" type="hidden" id="ocultoPermisos">
+    </form>
+<!-- En el marco flotante, y de forma invisible al usuario, se carga el script que
+lee los permisos actuales del archivo y los muestra en el correspondiente nodo de
+texto de la página principal.-->
+    <iframe name="marcoPermisos" id="marcoPermisos" src="" width = "800" height = "100" frameborder="3">
+    Su navegador no soporta iframe
+    </iframe>
+  </body>
+</html>

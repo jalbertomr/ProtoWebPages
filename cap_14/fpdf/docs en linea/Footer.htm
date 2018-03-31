@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://www.fpdf.org/es/doc/footer.htm -->
+<HTML><HEAD><TITLE>Footer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1"><LINK 
+href="Footer_archivos/fpdf.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY>
+<H2>Footer</H2><TT>Footer()</TT> 
+<H4 class=st>Version</H4>1.0 
+<H4 class=st>Descripción</H4>Este método es usado para generar el pie de página. 
+Es automáticamente invocado por AddPage() y Close() y no sebería ser invocado 
+directamente por la aplicación. La implementación en FPDF es vacia, así que si 
+desea un procesamiento específico debe hacer subclase y sobreescribir el método. 
+
+<H4 class=st>Ejemplo</H4>
+<DIV 
+style="PADDING-RIGHT: 3px; MARGIN-TOP: 1.2em; PADDING-LEFT: 3px; MARGIN-BOTTOM: 1.2em; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; BACKGROUND-COLOR: #e0e0e0"><TT>class 
+PDF extends FPDF<BR>{<BR>function Footer()<BR>{<BR>&nbsp;&nbsp;&nbsp;&nbsp;//Go 
+to 1.5 cm from 
+bottom<BR>&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;SetY(-15);<BR>&nbsp;&nbsp;&nbsp;&nbsp;//Select 
+Arial italic 
+8<BR>&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;SetFont('Arial','I',8);<BR>&nbsp;&nbsp;&nbsp;&nbsp;//Print 
+centered page number<BR>&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;Cell(0,10,'Page 
+'.$this-&gt;PageNo(),0,0,'C');<BR>}<BR>} </TT></DIV>
+<H4 class=st>Vea además</H4><A 
+href="http://www.fpdf.org/es/doc/header.htm">Header()</A>. </BODY></HTML>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0036)http://www.fpdf.org/es/doc/write.htm -->
+<HTML><HEAD><TITLE>Write</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1"><LINK 
+href="Write_archivos/fpdf.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY>
+<H2>Write</H2><TT>Write(<B>float</B> h, <B>string</B> txt [, <B>mixed</B> 
+link])</TT> 
+<H4 class=st>Version</H4>1.5 
+<H4 class=st>Descripción</H4>Este método imprime el texto desde la posición 
+actual. Cuando el márgen derecho es alcanzado (o el carácter \n es alcanzado) se 
+produce un salto de línea y el texto continua desde el márgen izquierdo. Una ves 
+el método termine, la posición actual es dejada justo al final del texto. <BR>Es 
+posible poner una referencia sobre el texto. 
+<H4 class=st>Parámetros</H4><TT><U>h</U></TT> 
+<BLOCKQUOTE>Alto de línea. </BLOCKQUOTE><TT><U>txt</U></TT> 
+<BLOCKQUOTE>Cadena a ser impresa. </BLOCKQUOTE><TT><U>link</U></TT> 
+<BLOCKQUOTE>URL o identificador regresado por AddLink(). </BLOCKQUOTE>
+<H4 class=st>Ejemplo</H4>
+<DIV 
+style="PADDING-RIGHT: 3px; MARGIN-TOP: 1.2em; PADDING-LEFT: 3px; MARGIN-BOTTOM: 1.2em; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; BACKGROUND-COLOR: #e0e0e0"><TT>//Comienza 
+con fuente 
+regular<BR>$pdf-&gt;SetFont('Arial','',14);<BR>$pdf-&gt;Write(5,'Visit 
+');<BR>//Then put a blue underlined 
+link<BR>$pdf-&gt;SetTextColor(0,0,255);<BR>$pdf-&gt;SetFont('','U');<BR>$pdf-&gt;Write(5,'www.fpdf.org','http://www.fpdf.org'); 
+</TT></DIV>
+<H4 class=st>Vea además</H4><A 
+href="http://www.fpdf.org/es/doc/setfont.htm">SetFont()</A>, <A 
+href="http://www.fpdf.org/es/doc/settextcolor.htm">SetTextColor()</A>, <A 
+href="http://www.fpdf.org/es/doc/addlink.htm">AddLink()</A>, <A 
+href="http://www.fpdf.org/es/doc/multicell.htm">MultiCell()</A>, <A 
+href="http://www.fpdf.org/es/doc/setautopagebreak.htm">SetAutoPageBreak()</A>. 
+</BODY></HTML>

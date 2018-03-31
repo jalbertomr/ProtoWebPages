@@ -1,0 +1,7 @@
+<?php
+	echo ("Valor de MAX_RAND: ".getrandmax()."<br>");
+	$aleatorio = rand();
+	echo ("Número aleatorio sin parámetros: $aleatorio<br>");
+	$aleatorio=rand(0,10);
+	echo ("Número aleatorio entre 0 y 10: $aleatorio<br>");
+?>

@@ -1,0 +1,33 @@
+BODY {
+	FONT-FAMILY: "Times New Roman",serif
+}
+H2 {
+	COLOR: #4000a0
+}
+P.demo {
+	MARGIN-TOP: -10px; TEXT-ALIGN: center
+}
+A.demo {
+	FONT-WEIGHT: bold; COLOR: #0000cc; TEXT-DECORATION: none
+}
+A.demo:link {
+	FONT-WEIGHT: bold; COLOR: #0000cc; TEXT-DECORATION: none
+}
+A.demo:hover {
+	FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: none
+}
+A.demo:active {
+	FONT-WEIGHT: bold; COLOR: #0000ff; TEXT-DECORATION: none
+}
+.st {
+	FONT-WEIGHT: bold; COLOR: #900000
+}
+.kw {
+	FONT-WEIGHT: bold; COLOR: #000080
+}
+.str {
+	COLOR: #cc0000
+}
+.cmt {
+	COLOR: #008000
+}

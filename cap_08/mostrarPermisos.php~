@@ -1,0 +1,4 @@
+<?php
+   echo (printf('%o', fileperms("iconos"))."<br>");
+	echo (substr(printf('%o', fileperms("multiLinea.txt")), -4));
+?>

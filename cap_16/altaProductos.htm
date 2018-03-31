@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Alta de productos</title>
+    <script language="javascript" type="text/javascript">
+//Expresion regular para comprobar campos numéricos.
+      function numerico (){
+        expresion=/^\d{1,},?\d{1,2}$/;
+        resultado = expresion.test(this);
+        return resultado;
+      }
+      function iniciar (){
+// Se implementa el método de comprobación de campos numéricos
+        String.prototype.numerico = numerico;
+// Se posiciona el foco en el primer campo.
+		document.getElementById ("mCodigo").focus();
+      }
+/* La siguiente función comprueba si todos los datos del formulario son correctos antes de enviar el formulario.*/
+      function comprobarDatos (){
+        if (!(document.getElementById("mCodigo").value.numerico())){
+          alert ("Error en el código.");
+          document.getElementById("mCodigo").focus();
+          return false;
+        }
+        if (document.getElementById("mDescripcion").value==""){
+          alert ("Error en la descripción.");
+          document.getElementById("mDescripcion").focus();
+          return false;
+		}
+        if (!(document.getElementById("mPrecioCompra").value.numerico())){
+          alert ("Error en el precio de compra.");
+          document.getElementById("mPrecioCompra").focus();
+          return false;
+        }
+        if (!(document.getElementById("mPrecioVenta").value.numerico())){
+          alert ("Error en el precio de venta.");
+          document.getElementById("mPrecioVenta").focus();
+          return false;
+        }
+        if (!(document.getElementById("mStock").value.numerico())){
+          alert ("Error en el stock.");
+          document.getElementById("mStock").focus();
+          return false;
+        }
+		return true;
+      }
+	</script>
+  </head>
+  <body onLoad="javascript:iniciar();">
+  <form action="altaProductos.php" method="post" name="formularioAltaProductos" id="formularioAltaProductos" onReset="javascript:iniciar();" onSubmit="return comprobarDatos();">
+    <table width="511" border="2" cellspacing="0" cellpadding="4">
+      <tr align="center">
+        <td height="52" colspan="2"><h2>ALTA DE PRODUCTOS</h2></td>
+      </tr>
+      <tr>
+        <td width="187" align="right">C&oacute;digo:</td>
+        <td width="300"><input name="mCodigo" type="text" id="mCodigo"></td>
+      </tr>
+      <tr>
+        <td align="right">Descripci&oacute;n:</td>
+        <td><input name="mDescripcion" type="text" id="mDescripcion" size="50" maxlength="40"></td>
+      </tr>
+      <tr>
+        <td align="right">Precio de Compra: </td>
+        <td><input name="mPrecioCompra" type="text" id="mPrecioCompra"></td>
+      </tr>
+      <tr>
+        <td align="right">Precio de Venta: </td>
+        <td><input name="mPrecioVenta" type="text" id="mPrecioVenta"></td>
+      </tr>
+      <tr>
+        <td align="right">Stock inicial: </td>
+        <td><input name="mStock" type="text" id="mStock"></td>
+      </tr>
+      <tr align="center">
+        <td><input name="mandar" type="submit" id="mandar" value="ACEPTAR"></td>
+        <td><input name="borrar" type="reset" id="borrar" value="BORRAR"></td>
+      </tr>
+    </table>
+  </form>
+  </body>
+</html>

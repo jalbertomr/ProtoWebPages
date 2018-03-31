@@ -1,0 +1,25 @@
+<?php
+// Se comprueba si existe la cookie.
+	if (!$_COOKIE["idiomaUsuario"]){
+// Si no existe, se determina como página la destinada a elegir el idioma.
+		$pagina="pedirIdioma.htm";
+	} elseif ($_COOKIE["idiomaUsuario"]=="sp"){
+/* Si existe la cookie y el valor de la variable es "sp" se irá a la página en español.
+Además, se vuelve a grabar la cookie por otras 24 horas.*/
+		setcookie ("idiomaUsuario","sp",time()+60);
+		$pagina="spanish.htm";
+	} else {
+/* Si el valor no es "sp" se irá a la página en inglés.
+Además, se vuelve a grabar la cookie por otras 24 horas. */
+		setcookie ("idiomaUsuario","en",time()+60);
+		$pagina="english.htm";
+	}
+?>
+<html>
+	<head>
+	<script language="javascript" type="text/javascript">
+// Se redirige a la página seleccionada.
+		location.href="<?php echo($pagina); ?>";
+	</script>
+	</head>
+</html>

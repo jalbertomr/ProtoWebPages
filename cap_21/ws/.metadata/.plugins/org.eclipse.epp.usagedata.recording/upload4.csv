@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.team.ui,3.5.0.I20090430-0408,"org.eclipse.team.ui",1271113051453
+started,bundle,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console",1271113051500
+started,bundle,org.eclipse.team.cvs.ui,3.3.201.R35x_v20090826-0905,"org.eclipse.team.cvs.ui",1271113051750
+started,bundle,org.eclipse.php.debug.core,2.1.1.v20090914-1400,"org.eclipse.php.debug.core",1271113051812
+started,bundle,org.eclipse.php.debug.ui,2.1.1.v20090714-1338,"org.eclipse.php.debug.ui",1271113052546
+activated,view,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.ui.explorer",1271113056125
+activated,view,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.ui.explorer",1271113056328
+closed,view,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.internal.introview",1271113056406
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113064531
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113064546
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113064703
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113070375
+deactivated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113074609
+activated,workbench,org.eclipse.ui.workbench,3.5.1.M20090826-0800a,"",1271113347921
+started,bundle,org.eclipse.wst.xsl.debug.ui,1.0.0.v200904240436,"org.eclipse.wst.xsl.debug.ui",1271113349531
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.perspectives.showPerspective",1271113361250
+executed,command,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.perspective",1271113361250
+error,log,,,"Part already exists in page layout: org.eclipse.debug.ui.PHPStackView.",1271113363468
+started,bundle,org.eclipse.wst.html.ui,1.0.401.v200908111935,"org.eclipse.wst.html.ui",1271113363781
+opened,view,org.eclipse.php.debug.ui,2.1.1.v20090714-1338,"org.eclipse.debug.ui.PHPDebugOutput",1271113364171
+opened,view,org.eclipse.ui.console,3.4.0.v20090513,"org.eclipse.ui.console.ConsoleView",1271113364343
+opened,view,org.eclipse.debug.ui,3.5.1.v20090811_r351,"org.eclipse.debug.ui.DebugView",1271113365015
+started,bundle,org.eclipse.wst.html.core,1.1.300.v200903120608,"org.eclipse.wst.html.core",1271113365156
+started,bundle,org.eclipse.wst.xml.core,1.1.401.v200908242115,"org.eclipse.wst.xml.core",1271113365250
+started,bundle,org.eclipse.wst.xml.ui,1.1.1.v200908242115,"org.eclipse.wst.xml.ui",1271113365593

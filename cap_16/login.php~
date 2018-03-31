@@ -1,0 +1,6 @@
+<?php
+$db_hostname='localhost';
+$db_database='publicationsNO';
+$db_username='Beto';
+$db_password='betopass';
+?>

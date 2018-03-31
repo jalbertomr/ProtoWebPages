@@ -1,0 +1,29 @@
+<?php
+// Se abre el socket.
+  $manejador=fsockopen("127.0.0.1",80);
+// Se manda una solicitud.
+  fputs ($manejador,"GET / HTTP/1.0\r\n\r\n");
+  $cadena="";
+/* Se recorre el fichero remoto que se recibe (la respuesta) hasta que se
+encuentre un carácter "<", lo que indicará una etiqueta HTML o PHP. Como lo que nos interesa son
+las cabeceras, en cuanto se encuentre una de estas etiquetas sabemos que ya estamos en el
+cuerpo de la respuesta y por lo tanto ya no es lo que buscamos, así que, cuando se encuentre
+el primer "<" se interrumpe el recorrido.*/
+  while (!feof($manejador)){
+    $guarismo=fgetc($manejador);
+	if ($guarismo=="<"){
+		break;
+	}
+/* Cada carácter se va añadiendo a la cadena de las cabeceras para mostrarla luego.
+Si se encuentra el carácter correspondiente al ASCII 13 (salto de línea), lo que se añade es
+un salto de línea HTML para poder mostrarlo en la página.*/
+	if (ord($guarismo)==13){
+		$cadena.="<br>\n";
+	} else {
+		$cadena.=$guarismo;
+	}
+  }
+  echo ($cadena);
+// Se cierra el socket.
+  fclose ($manejador);
+?>

@@ -1,0 +1,27 @@
+<html>
+  <head>
+  <title>Cabeceras de la solicitud</title>
+  </head>
+  <body>
+  <table width="400" border="4" cellpadding="4" cellspacing="0">
+    <tr><th colspan="2">
+      <h2>Listado de cabeceras</h2>
+    </th></tr>
+    <tr><th width="120">Cabecera</th><th>Valor</th></tr>
+    <?php
+/* Se obtienen las cabeceras de la solicitud en una matriz asociativa.*/
+      $cabeceras=getallheaders ();
+/* Se muestra cada elemento de la matriz.*/
+      foreach ($cabeceras as $nombre=>$valor) {
+        ?>
+        <tr><td>
+        <?php echo ($nombre); ?>
+        </td><td>
+        <?php echo ($valor); ?>
+        </td></tr>
+        <?php
+      }
+    ?>
+  </table>
+  </body>
+</html>

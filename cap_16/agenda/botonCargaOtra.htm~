@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>botonCargaOtra</title>
+  </head>
+  <body>
+    <script language="javascript" type="text/javascript" >
+    function saltar(pagina){
+      document.write("En Saltar a :"+pagina);
+      location.href=pagina;
+    	//document.myformulario.action='agregarCita.php';
+    	//document.myformulario.submit();
+    }
+    </script>
+
+    AGENDA DEL D&Iacute;A
+    <form action="" method="post" name="myformulario" id="myformulario">
+      <input type="hidden" name="fechaEnCurso" id="fechaEnCurso" value="<?php echo($fechaEnCurso); ?>">
+      <table witdh="500" border="0" cellpadding="0" cellspacing="0">
+        <tr><th>CITAS</th></tr>
+      </table>
+      <hr>
+      <input name='nuevaCita' type='button' id='nuevaCita' value='Agregar cita' onClick='javascript:saltar(\"agregarCita.php\");'>
+      <input name='cambiarFecha' type='button' id='cambiarFecha' value='Otro d&iacute;a' onClick='javascript:saltar(\"cambiarFecha.php\");'>
+   </form>
+  </body>  
+</html>
+  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="gemStore">
+    <head>
+        <title>AngularJS LAB</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css" />
+        <script type="text/javascript" src="public/angular-1.5.5/angular.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/application.css" />
+        <script type="text/javascript" src="js/products.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    <body class="list-group" ng-controller="StoreController as store">
+        <!-- Products Container -->
+        <header>
+            <h1 class="text-center">Betof's Gemas bajo diseño</h1>
+            <h2 class="text-center">  Un Almacen Angular</h2>
+        </header>
+        {{store.products.stringjson}}
+        <div class="list-group">
+          <div class="list-group-item" ng-repeat="product in store.products">
+            <h3>{{product.name}}<em class="pull-right">{{product.price | currency}}</em></h3>
+            
+            <!-- Image Gallery -->
+            <product-gallery></product-gallery>
+            <!-- Product Tabs -->
+            <product-tabs></product-tabs>
+
+          </div>
+        </div>    
+    </body>
+</html>

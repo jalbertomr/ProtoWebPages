@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript">
+			function comprobarFormulario() {
+				if (!document.getElementById("soltero").checked)	{
+					document.getElementById("ocultoSoltero").value="NO";
+				} else {
+					document.getElementById("ocultoSoltero").value="SI";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form name="f_prof" id="f_prof" action="establecerOculto.php" method="post" onSubmit="javascript:comprobarFormulario();">
+		    campoTexto:
+		    <input type="text" name="campoTexto" id="campoTexto" >
+		    <br>
+			¿Es usted soltero?
+			<input type="checkbox" name="soltero" id="soltero" value="SI">
+			<br>
+			<input type="hidden" name="ocultoSoltero" id="ocultoSoltero" value="">
+			<p>
+				<input type="submit" value="ENVIAR" name="ok" id="ok">
+			</p>
+		</form>
+	</body>
+</html>

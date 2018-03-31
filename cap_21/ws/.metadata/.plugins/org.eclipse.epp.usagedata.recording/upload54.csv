@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views.PropertySheet",1271201468828
+executed,command,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views.properties.NewPropertySheetCommand",1271201468828
+activated,view,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views.PropertySheet",1271201474609
+closed,view,org.eclipse.ui.views,3.4.1.M20090826-0800,"org.eclipse.ui.views.PropertySheet",1271201474625
+activated,view,org.eclipse.ui.ide,3.5.1.M20090826-0800,"org.eclipse.ui.views.TaskList",1271201485656
+activated,editor,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.editor",1271201486578
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.delete",1271201512859
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.copy",1271201682375
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.edit.paste",1271201685437
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1271201734250
+activated,view,org.eclipse.php.debug.ui,2.1.1.v20090714-1338,"org.eclipse.debug.ui.PHPDebugOutput",1271201737531
+opened,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201737734
+activated,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201737875
+activated,editor,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.editor",1271201753000
+closed,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201753000
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1271201772937
+opened,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201775921
+activated,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201776078
+no handler,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.refresh",1271201779953
+closed,editor,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.editor",1271201794062
+activated,view,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.ui.explorer",1271201797093
+opened,editor,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.editor",1271201797437
+activated,editor,org.eclipse.php.ui,2.1.1.v20090914-1400,"org.eclipse.php.editor",1271201797765
+closed,editor,org.eclipse.ui.browser,3.2.300.v20090526,"org.eclipse.ui.browser.editor",1271201800250
+executed,command,org.eclipse.ui,3.5.1.M20090902-1000,"org.eclipse.ui.file.save",1271201808187

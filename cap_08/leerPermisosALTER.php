@@ -1,0 +1,51 @@
+<?php
+/* Se eliminan las barras sobrantes que se han producido durante la transmisión del nombre del fichero (ver capítulo 7).*/
+	$_GET["fichero"] = ereg_replace("\\\\\\\\", "/", $_GET["fichero"]);
+/* Se obtienen los permisos del archio especificado. El nombre es pasado mediante GET, pero no aparece en
+la barra de direcciones porque esta página se carga en un marco de la página principal. Ademas, el nombre del
+fichero no se transmite desde un formulario enviado con GET, sino que es transmitido como una variable desde
+una línea de JavaScript (ver el código de la página prncipal).*/
+	$permisosActuales = substr(sprintf('%o', fileperms($_GET["fichero"])), -4);
+	echo ($permisosActuales);
+?>
+<html>
+<body>
+	<script language="javascript" type="text/javascript">
+	   debugger;
+/* Se obtienen los permisos del fichero especificado, que se han recuperado con PHP, en una variable de JavaScript.*/
+		permisos = "<?php echo ($permisosActuales);?>";
+		permisos = "666";
+/* Se muestran los permisos en un nodo de texto de la página principal.*/
+		this.parent.document.getElementById("permisoVigente").firstChild.nodeValue = permisos;
+		this.parent.document.getElementById("nuevoPermiso").firstChild.nodeValue = permisos;
+/* Se obtienen los permisos de los tres niveles de usuarios como variables numéricas.*/
+		permisosPropietario = parseInt(permisos.substr(1, 1));
+		permisosGrupo = parseInt(permisos.substr(2, 1));
+		permisosOtros = parseInt(permisos.substr(3));
+/* Se marcan o desmarcan las casillas correspondientes a los permisos del propietario en la página pincipal,
+evaluando los tres posibles niveles de pemisos, de forma que queden marcadas las casillas que corresponden
+a los permisos actuales.*/
+		this.parent.document.getElementById ("lProp").checked = eval(permisosPropietario > 3);
+		if (permisosPropietario > 3) permisosPropietario- = 4;
+		this.parent.document.getElementById ("eProp").checked = eval(permisosPropietario > 1);
+		if (permisosPropietario > 1) permisosPropietario- = 2;
+		this.parent.document.getElementById ("xProp").checked = eval(permisosPropietario > 0);
+/* Se marcan o desmarcan las casillas correspondientes a los permisos del grupo en la página pincipal,
+evaluando los tres posibles niveles de pemisos, de forma que queden marcadas las casillas que corresponden
+a los permisos actuales.*/
+		this.parent.document.getElementById ("lGrupo").checked = eval(permisosGrupo > 3);
+		if (permisosGrupo > 3) permisosGrupo- = 4;
+		this.parent.document.getElementById ("eGrupo").checked = eval(permisosGrupo > 1);
+		if (permisosGrupo > 1) permisosGrupo- = 2;
+		this.parent.document.getElementById ("xGrupo").checked = eval(permisosGrupo > 0);
+/* Se marcan o desmarcan las casillas correspondientes a los permisos del nivel "Otros" en la página pincipal,
+evaluando los tres posibles niveles de pemisos, de forma que queden marcadas las casillas que corresponden
+a los permisos actuales.*/
+		this.parent.document.getElementById ("lOtros").checked = eval(permisosOtros > 3);
+		if (permisosOtros > 3) permisosOtros- = 4;
+		this.parent.document.getElementById ("eOtros").checked = eval(permisosOtros > 1);
+		if (permisosOtros > 1) permisosOtros- = 2;
+		this.parent.document.getElementById ("xOtros").checked = eval(permisosOtros > 0);
+	</script>
+</body>
+</html>

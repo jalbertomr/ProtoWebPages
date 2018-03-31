@@ -1,0 +1,17 @@
+<?php
+	$sectores = array("Electricistas","Fontaneros","Transportistas","Aseguradores");
+	echo ("La opción elegida es:" . $_POST["sector"] . "<br>");
+	echo ("La profesión correspondiente es: " . $sectores[$_POST["sector"]] . "<br>");
+	echo ("foreach \$HTTP_GET_VARS as $cve => $valor <br>");
+	foreach ($HTTP_GET_VARS as \$cve => \$valor){
+      echo ("\$HTTP_GET_VARS $cve -> $valor <br>");
+    }
+   echo ("foreach \$HTTP_POST_VARS as $cve => $valor <br>"); 
+	foreach ($HTTP_POST_VARS as \$cve => \$valor){
+	  echo ("\$HTTP_POST_VARS $cve -> $valor <br>");
+	}
+	echo ("foreach \$POST as \$cve => \$valor <br>");
+	foreach ($_POST as $cve => $valor){
+	  echo ("\$POST $cve -> $valor <br>");	
+	}
+?>

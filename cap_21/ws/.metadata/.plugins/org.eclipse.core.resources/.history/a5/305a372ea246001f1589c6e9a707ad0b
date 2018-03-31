@@ -1,0 +1,6 @@
+<?php
+	var miVariable = "Primer error";
+	funcion miFuncionErronea(){
+		declaremos otroError = array();
+	}
+?>

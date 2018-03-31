@@ -1,0 +1,11 @@
+<?php
+	define ("salto", "<br>\n");
+//Se carga el script externo.
+	require ("calculoIntereses.php");
+	echo ("El capital solicitado es: ".$HTTP_POST_VARS["importe"]." euros.".salto);
+	echo ("El tipo de interés es: ".$HTTP_POST_VARS["tipo"]." %.".salto);
+	echo ("El plazo de amortización es de: ".$HTTP_POST_VARS["plazo"]." meses.".salto.salto);
+
+	$pagoMensual=calculaCuota($HTTP_POST_VARS["importe"], $HTTP_POST_VARS["tipo"], $HTTP_POST_VARS["plazo"]);
+	echo ("El importe de las cuotas es de: $pagoMensual euros mensuales".salto);
+?>

@@ -1,0 +1,39 @@
+<?php //query.php
+  require_once('login.php');
+  
+  $db_connect=mysql_connect($db_hostname,$db_username,$db_password);
+  
+  if(!$db_connect) die('No se pudo conectar a la base de datos :'.mysql_error());
+  
+  mysql_select_db($db_database)
+  or die("No se pudo seleccionar la base de datos :".mysql_error());
+
+  $query="SELECT * FROM classics";  
+  $result=mysql_query($query);
+  
+  if(!$result) die("No se pudo ejecutar la consulta :".mysql_error());
+
+    
+  $rows = mysql_num_rows($result);
+  /*
+  for($j = 0; $j < $rows; ++$j){
+    echo 'Author: '.mysql_result( $result, $j, 'author').'<br />';
+    echo 'Title:  '.mysql_result( $result, $j, 'title').'<br />';
+    echo	'Category:  '.mysql_result( $result, $j, 'category').'<br />';
+    echo	'Year:  '.mysql_result( $result, $j, 'year').'<br />';
+    echo	'ISBN:  '.mysql_result( $result, $j, 'isbn').'<br />'.'<br />';
+  }
+  */
+  
+  for($j=0; $j < $rows; ++$j) {
+  	 $row = mysql_fetch_row($result);
+    echo 'Author: '.   $row[0].'<br />';
+    echo 'Title:  '.   $row[1].'<br />';
+    echo	'Category:  '.$row[2].'<br />';
+    echo	'Year:  '.    $row[3].'<br />';
+    echo	'ISBN:  '.    $row[4].'<br />'.'<br />';
+  }
+  
+  mysql_close($db_connect) 
+  or die('No se pudo cerrar la base de datos :'.mysql_error());	
+?>

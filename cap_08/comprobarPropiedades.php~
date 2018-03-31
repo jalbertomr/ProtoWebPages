@@ -1,0 +1,46 @@
+<?php
+// Se define el salto de línea
+	define ("salto","<br>\n");
+// Se comprueba si existe el fichero.
+	if (file_exists($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento existe.".salto);
+	} else {
+		echo ("El elemento NO existe en la ruta especificada .".salto);
+	}
+// Se comprueba si es un fichero.
+	if (is_file($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es un fichero.".salto);
+	} else {
+		echo ("El elemento NO es un fichero.".salto);
+	}
+// Se comprueba si es un directorio.
+	if (is_dir($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es un directorio.".salto);
+	} else {
+		echo ("El elemento NO es un directorio.".salto);
+	}
+// Se comprueba si es un enlace simbólico.
+	if (is_link($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es un enlace simbólico.".salto);
+	} else {
+		echo ("El elemento NO es un enlace simbólico.".salto);
+	}
+// Se comprueba si se puede leer.
+	if (is_readable($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es legible.".salto);
+	} else {
+		echo ("El elemento NO es legible.".salto);
+	}
+// Se comprueba si se puede escribir.
+	if (is_writeable($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es escribible.".salto);
+	} else {
+		echo ("El elemento NO es escribible.".salto);
+	}
+// Se comprueba si se puede ejecutar.
+	if (is_executable($HTTP_POST_VARS["elemento"])) {
+		echo ("El elemento es ejecutable.".salto);
+	} else {
+		echo ("El elemento NO es ejecutable.".salto);
+	}
+?>

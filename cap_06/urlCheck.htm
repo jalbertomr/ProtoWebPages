@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script language="javascript" type="text/javascript">
+			function comprobarFormulario () {
+				document.getElementById ("ocultoTexto").value=escape(document.getElementById("textoOriginal").value);
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			Teclee un texto para su codificaci&oacute;n URL.
+		</p>
+		<form id="formulario1" name="formulario1">
+			<p>
+				<textarea name="textoOriginal" cols="50" rows="4" id="textoOriginal"></textarea>
+			</p>
+		</form>
+		<form id="formulario2" name="formulario2" method="post" action="urlCheck.php" onSubmit="javascript: return comprobarFormulario();">
+			<p>
+				<input type="hidden" name="ocultoTexto" id="ocultoTexto" value="">
+				<input name="mandar" type="submit" id="mandar" value="ENVIAR">
+				<input name="borrar" type="reset" id="borrar" value="BORRAR">
+			</p>
+		</form>
+	</body>
+</html>

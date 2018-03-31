@@ -1,0 +1,4 @@
+<?php
+	$fecha = date("d/m/Y/z");
+	echo ("La fecha de hoy es: $fecha<br>");
+?>

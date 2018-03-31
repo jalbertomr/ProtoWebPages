@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<people>
+    <person type='boy'>
+        <name>Beto</name>
+        <age>45</age>
+        <body-weight>
+            <blah>123</blah>
+            <blah>432</blah>
+        </body-weight>
+    </person>
+
+    <person type='girl'>
+        <name>Cindy</name>
+        <age>27</age>
+        <body-weight>
+            <blah>001</blah>
+            <blah>200</blah>
+
+        </body-weight>
+    </person>
+
+</people>

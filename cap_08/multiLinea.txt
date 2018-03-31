@@ -1,0 +1,5 @@
+Esto es un archivo.
+Tiene varias líneas.
+Cuando se lea se pueden identificar los saltos de línea.
+Se puede leer de varias maneras.
+Solo es texto plano.

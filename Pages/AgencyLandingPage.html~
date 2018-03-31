@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>SuperMegaFabulosa pagina Landing | Beto prods.</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    
+    <link rel="stylesheet" href="/Pages/css/styles.css"/>
+    
+    <script src="https://use.typekit.net/huu8mlz.js"></script>
+    <script>try{Typekit.load({async: true});}catch(e){}
+    </script>
+  </head>
+  
+  <body>
+    <section id="banner">
+      <div class="wrapper">
+        <p>Super<span>Mega</span>Fabulosa</p>
+        <header>
+          <p>Super<span>Mega</span>Fabulosa</p>
+            
+            <nav>
+              <a href="#">Inicio</a>
+              <a href="#">Portafolio</a>
+              <a href="#">Servicios</a>
+              <a href="#">Contacto</a>
+            </nav>
+            
+        </header>
+        
+        <div class="content">
+          <h1 class="title">Creamos productos hermosos.</h1>
+          <h2 class="sub_title">Truffant DIY keffiyeh, twee messanger bag venmo locavore organic master cleanse marfa gochujang selvage. </h2>
+          <div class="button_wrapper">
+            <a href="#" class="button button_highlight">Saber mas</a>
+            <a href="#" class="button button_secondary">Play Video</a>
+          </div>        
+        </div>
+      </div>
+    </section>
+  </body>
+</html> 
+   
+    
